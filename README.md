@@ -4,7 +4,7 @@ triangles
 ## Import some data
 ```bash
 ./getdata.sh
-./import.sh ca-HepTh.txt.clean
+./import.sqlite.sh ca-HepTh.txt.clean
 ```
 
 ## Run the queries
