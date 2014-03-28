@@ -1,0 +1,16 @@
+
+
+udedges(src,dst) :- edges(src,dst), src <= dst
+
+udedgesD(vid) :- edges(vid, z)
+udedgesD(vid) :- edges(z, vid)
+
+vertex(vid, count(vid)) :- udedgesD(vid)
+
+
+triswap(vbig, vsmall) :- udedges(vbig, vsmall), vertex(vbig, vbigdeg), vertex(vsmall, vsmalldeg), vbig >= vsmall
+triswap(vbig, vsmall) :- udedges(vsmall, vbig), vertex(vbig, vbigdeg), vertex(vsmall, vsmalldeg), vsmall < vbig
+
+
+triangle(v,u,w) :- triswap(w, u), triswap(u, v), triswap(w, v)
+
