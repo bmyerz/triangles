@@ -8,8 +8,8 @@ udedgesD(vid) :- edges(z, vid)
 vertex(vid, count(vid)) :- udedgesD(vid)
 
 
-triswap(vbig, vsmall) :- udedges(vbig, vsmall), vertex(vbig, vbigdeg), vertex(vsmall, vsmalldeg), vbig >= vsmall
-triswap(vbig, vsmall) :- udedges(vsmall, vbig), vertex(vbig, vbigdeg), vertex(vsmall, vsmalldeg), vsmall < vbig
+triswap(vbig, vsmall) :- udedges(vbig, vsmall), vertex(vbig, vbigdeg), vertex(vsmall, vsmalldeg), vbigdeg >= vsmalldeg
+triswap(vbig, vsmall) :- udedges(vsmall, vbig), vertex(vbig, vbigdeg), vertex(vsmall, vsmalldeg), vsmalldeg < vbigdeg
 
 
 triangle(v,u,w) :- triswap(w, u), triswap(u, v), triswap(w, v)
