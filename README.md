@@ -9,6 +9,6 @@ triangles
 
 ## Run the queries
 ```bash
-sqlite3 -init triangle-simple.sql ca-HepTh.txt.clean.db
-sqlite3 -init triangle.sql ca-HepTh.txt.clean.db
+sqlite3 ca-HepTh.txt.clean.db <triangle-simple.sql 
+sqlite3 ca-HepTh.txt.clean.db <triangle.sql
 ```
